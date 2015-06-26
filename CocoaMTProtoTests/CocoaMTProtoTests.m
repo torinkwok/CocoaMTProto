@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
+#import "MTApiEnvironment.h"
 
 @interface CocoaMTProtoTests : XCTestCase
 
@@ -27,7 +28,9 @@
 
 - (void)testExample {
     // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+    MTApiEnvironment* APIEvni = [ [ MTApiEnvironment alloc ] init ];
+    XCTAssert(APIEvni, @"Pass");
+    NSLog( @"%@", APIEvni );
 }
 
 - (void)testPerformanceExample {
